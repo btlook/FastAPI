@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>用户名: {{user|upper}}</p>
+<p>年龄: {{age}}</p>
+<p>四大名著: {{books}}</p>
+
+<p><1>: {{books.0}}</p>
+<p><2>: {{books.1}}</p>
+<p><3>: {{books.2}}</p>
+<p><4>: {{books.3}}</p>
+
+<ul>
+    <li>{{books.0}}</li>
+    <li>{{books.1}}</li>
+    <li>{{books.2}}</li>
+    <li>{{books.3}}</li>
+</ul>
+
+
+<p>姓名: {{user_dict.name}}</p>
+<p>年龄: {{user_dict.age}}</p>
+<p>性别: {{user_dict.gender}}</p>
+
+
+<p>Pai的数值: {{pai|round(2)}}</p>
+<p>Pai的数值: {{pai|round(5)}}</p>
+
+
+<p>影视区</p>
+{% if age > 18 %}
+    <ul>
+        <li>日韩</li>
+        <li>欧姆</li>
+        <li>大陆</li>
+    </ul>
+{% else %}
+    <ul>
+        <li>黑猫警长</li>
+        <li>熊大熊二</li>
+        <li>大头儿子</li>
+    </ul>
+
+{% endif %}
+
+<hr>
+{% for book in books%}
+    <li>{{book}}</li>
+{% endfor %}
+
+
+<hr>
+{% if age> 18 %}
+    {% for movie in movies.Adult %}
+        <li>{{movie}}</li>
+    {% endfor %}
+
+{%else%}
+    {% for movie in movies.Unadult %}
+        <li>{{movie}}</li>
+    {%endfor%}
+
+{%endif%}
+
+
+
+</body>
+</html>

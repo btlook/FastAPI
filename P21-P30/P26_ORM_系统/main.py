@@ -3,8 +3,10 @@ import uvicorn
 
 from tortoise.contrib.fastapi import register_tortoise
 from settings import TORTOISE_ORM
-
+from api.student import student_api
 app = FastAPI()
+
+app.include_router(student_api,tags=["选课系统的学生接口"])
 
 # fastapi 一旦运行, register_tortoise 就开始执行,实现监控
 register_tortoise(

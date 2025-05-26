@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学生信息</title>
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css"
+</head>
+<body>
+<h1>学生信息: </h1>
+
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <p>
+            <a href="" class="btn btn-primary">添加学生</a>
+        </p>
+
+<!--        <btn class="btn primary"><a href="">添加学生</a></btn>-->
+
+        <table class="table table-bordered table-striped table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th>学生学号</th>
+                    <th>学生姓名</th>
+                    <th>学生班级</th>
+                </tr>
+            </thead>
+                <tbody>
+                {% for student in students %}
+                    <tr>
+                        <td>{{ student.sno }}</td>
+                        <td>{{ student.name }}</td>
+                        <td>{{ student.clas_id }}</td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
